@@ -1,0 +1,17 @@
+[
+  {
+    "id": 2,
+    "title": "Hunter x hunter",
+    "studioId": 2
+  },
+  {
+    "id": 3,
+    "title": "Naruto",
+    "studioId": 3
+  },
+  {
+    "id": 4,
+    "title": "Yuyu-Hakusho",
+    "studioId": 4
+  }
+]
