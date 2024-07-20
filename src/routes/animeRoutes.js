@@ -59,7 +59,7 @@ router.put("/:id", (req, res) => {
   };
   animes.animes[animeIndex] = updatedAnime;
   writeAnime(animes);
-  res.json({ message: "Anime actualizado exitosamente", task: updatedAnime });
+  res.json({ message: "Anime actualizado exitosamente", Anime: updatedAnime });
 });
 
 // Eliminar una anime por ID
