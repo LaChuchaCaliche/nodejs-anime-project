@@ -1,8 +1,14 @@
 {
   "animes": [
     {
+      "id": 1,
+      "title": "ronoo",
+      "studioName": "Ghibli"
+    },
+    {
       "id": 2,
-      "title": "Mi vecino totoro"
+      "title": "YuyuHakusho",
+      "studioName": "Pierot"
     }
   ],
   "studios": [

@@ -18,14 +18,16 @@ const writeAnime = (animes) => {
 // Crear un nuevo anime
 router.post("/", (req, res) => {
   const animes = readAnime();
+
   const newAnime = {
     id: animes.animes.length + 1, // simulamos un id autoincrementable
     title: req.body.title, // obtenemos el titulo de la tarea desde el cuerpo de la solicitud
-    studioId: req.body.studioId
+    studioName: req.body.studioName,
   };
-  animes.animes.push(newAnime);
+
+  animes.animes.push(newAnime)
   writeAnime(animes);
-  res.status(201).json({ message: "Anime agregado exitosamente", anime: newAnime });
+  res.status(201).json({ message: "Anime agregado exiosamente", anime: newAnime });
 });
 
 // Obtener todas los animes
