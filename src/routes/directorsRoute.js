@@ -19,57 +19,55 @@ const writeAnime = (animes) => {
 router.post("/", (req, res) => {
   const animes = readAnime();
   const newAnime = {
-    id: animes.animes.length + 1, // simulamos un id autoincrementable
-    title: req.body.title, // obtenemos el titulo de la tarea desde el cuerpo de la solicitud
-    studioId: req.body.studioId
+    id: animes.directors.length + 1, // simulamos un id autoincrementable
+    name: req.body.name, // obtenemos el titulo de la tarea desde el cuerpo de la solicitud
+    
   };
-  animes.animes.push(newAnime);
+  animes.directors.push(newAnime);
   writeAnime(animes);
-  res.status(201).json({ message: "Anime agregado exitosamente", anime: newAnime });
+  res.status(201).json({ message: "Director agregado exitosamente", anime: newAnime });
 });
 
 // Obtener todas los animes
 router.get("/", (req, res) => {
   const animes = readAnime();
-  res.json(animes);
+  res.json(animes.directors);
 });
 
 // Obtener una anime por ID
 router.get("/:id", (req, res) => {
   const animes = readAnime();
-  const anime = animes.animes.find((t) => t.id === parseInt(req.params.id));
+  const anime = animes.directors.find((t) => t.id === parseInt(req.params.id));
   if (!anime) {
-    return res.status(404).json({ message: "Anime no encontrado",anime:anime });
+    return res.status(404).json({ message: "Director no encontrado",anime:anime });
   }
-  res.json(anime);
+  res.json(anime.directors);
 });
 
 // Actualizar una Anime por ID
 router.put("/:id", (req, res) => {
   const animes = readAnime();
-  const animeIndex = animes.animes.findIndex((t) => t.id === parseInt(req.params.id));
+  const animeIndex = animes.directors.findIndex((t) => t.id === parseInt(req.params.id));
   if (animeIndex === -1) {
-    return res.status(404).json({ message: "Anime no encontrado" });
+    return res.status(404).json({ message: "Director no encontrado" });
   }
   const updatedAnime = {
-    ...animes[animeIndex],
-    id: parseInt(req.params.id),
+    ...animes.directors[animeIndex],
     title: req.body.title,
     genre: req.body.genre,
   };
-  animes.animes[animeIndex] = updatedAnime;
-  writeAnime(animes);
-  res.json({ message: "Anime actualizado exitosamente", task: updatedAnime });
+  animes.directors[animeIndex] = updatedAnime;
+  writeAnime(animes.directors);
+  res.json({ message: "Director actualizado exitosamente", task: updatedAnime });
 });
 
 // Eliminar una anime por ID
 router.delete("/:id", (req, res) => {
   const animes = readAnime();
-  const newAnime = animes.animes.filter((t) => t.id !== parseInt(req.params.id));
-  if (animes.animes.length === newAnime.length) {
-    return res.status(404).json({ message: "Anime no encontrado" });
+  const newAnime = animes.directors.filter((t) => t.id !== parseInt(req.params.id));
+  if (animes.length === newAnime.length) {
+    return res.status(404).json({ message: "Director no encontrado" });
   }
-
   animes.animes = newAnime
   writeAnime(animes);
   res.json({ message: "Anime eliminado exitosamente" });

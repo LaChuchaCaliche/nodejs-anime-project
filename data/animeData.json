@@ -1,17 +1,27 @@
-[
-  {
-    "id": 2,
-    "title": "Hunter x hunter",
-    "studioId": 2
-  },
-  {
-    "id": 3,
-    "title": "Naruto",
-    "studioId": 3
-  },
-  {
-    "id": 4,
-    "title": "Yuyu-Hakusho",
-    "studioId": 4
-  }
-]
+{
+  "animes": [
+    {
+      "id": 2,
+      "title": "Mi vecino totoro"
+    }
+  ],
+  "studios": [],
+  "directors": [
+    {
+      "id": 1,
+      "name": "Hayao Miyasaki"
+    },
+    {
+      "id": 2,
+      "name": "Kentaro Muira"
+    },
+    {
+      "id": 3,
+      "name": "Yoshihiro Togashi"
+    },
+    {
+      "id": 4,
+      "name": "Gegardo Akutami"
+    }
+  ]
+}
