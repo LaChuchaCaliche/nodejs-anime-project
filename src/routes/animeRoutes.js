@@ -22,9 +22,16 @@ router.post("/", (req, res) => {
   const newAnime = {
     id: animes.animes.length + 1, // simulamos un id autoincrementable
     title: req.body.title, // obtenemos el titulo de la tarea desde el cuerpo de la solicitud
-    studioName: req.body.studioName,
+    studioName: req.body.studioName
   };
+  const studioName = newAnime.studioName
+  const studio = animes.studios.find(studio => studio.name === studioName)
+  if(!studio){
+    newAnime["studioId"] = "Estudio no registra"
 
+  }
+  else{newAnime.studioId= studio.id}
+  console.log(studio)
   animes.animes.push(newAnime)
   writeAnime(animes);
   res.status(201).json({ message: "Anime agregado exiosamente", anime: newAnime });
@@ -33,7 +40,7 @@ router.post("/", (req, res) => {
 // Obtener todas los animes
 router.get("/", (req, res) => {
   const animes = readAnime();
-  res.json(animes);
+  res.json(animes.animes);
 });
 
 // Obtener una anime por ID

@@ -2,13 +2,51 @@
   "animes": [
     {
       "id": 1,
-      "title": "ronoo",
-      "studioName": "Ghibli"
+      "title": "YuyuHakusho",
+      "studioName": "Pierot",
+      "studioId": 5
     },
     {
       "id": 2,
-      "title": "YuyuHakusho",
-      "studioName": "Pierot"
+      "title": "Cow boy bebop",
+      "studioName": "Pierot",
+      "studioId": 5
+    },
+    {
+      "id": 3,
+      "title": "Jujutsu Kaisen",
+      "studioName": "Mappa",
+      "studioId": 2
+    },
+    {
+      "id": 4,
+      "title": "Shingeki no kiojin",
+      "studioName": "Mappa",
+      "studioId": 2
+    },
+    {
+      "id": 5,
+      "title": "Mi vecino totoro",
+      "studioName": "Ghibli",
+      "studioId": 1
+    },
+    {
+      "id": 6,
+      "title": "One punch man",
+      "studioName": "MadHouse",
+      "studioId": "Estudio no registra"
+    },
+    {
+      "id": 7,
+      "title": "One piece",
+      "studioName": "Toei",
+      "studioId": 3
+    },
+    {
+      "id": 8,
+      "title": "Dragon ball super",
+      "studioName": "Toei",
+      "studioId": 3
     }
   ],
   "studios": [
@@ -30,7 +68,7 @@
     },
     {
       "id": 5,
-      "name": "Pierrot"
+      "name": "Pierot"
     }
   ],
   "directors": [
